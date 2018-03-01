@@ -1,0 +1,10 @@
+{
+	"version": "0.1.0",
+	"name":    "pulp-phpunit",
+    "autoload": {
+        "psr-0": { "Pulp\\": "src/"}
+    },
+    "require-dev": {
+        "pulp-tool/pulp-cli": "*"
+    }
+}

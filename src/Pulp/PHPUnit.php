@@ -60,15 +60,15 @@ class PHPUnit extends DataPipe {
 			//TODO: emit warning
 			return;
 		}
-		$xproc = new XSLTProcessor();
+		$xproc = new \XSLTProcessor();
 
 		$junitLog = file_get_contents('tmp/junit.xml');
 		if (!strlen($junitLog)) {
 			return [];
 		}
-		$junit = new DOMDocument();
+		$junit = new \DOMDocument();
 		$junit->loadXML($junitLog);
-		$xsl = new DOMDocument();
+		$xsl = new \DOMDocument();
 		$xsl->loadXML(file_get_contents('phpunit-twbs4.xsl'));
 		$xproc->importStylesheet($xsl);
 		$html = @$xproc->transformToXml($junit);

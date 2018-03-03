@@ -69,7 +69,7 @@ class PHPUnit extends DataPipe {
 		$junit = new \DOMDocument();
 		$junit->loadXML($junitLog);
 		$xsl = new \DOMDocument();
-		$xsl->loadXML(file_get_contents('phpunit-twbs4.xsl'));
+		$xsl->loadXML(file_get_contents(dirname(dirname(dirname(__FILE__))).'/_dist/phpunit-twbs4.xsl'));
 		$xproc->importStylesheet($xsl);
 		$html = @$xproc->transformToXml($junit);
 		if (strlen($html)) {

@@ -62,7 +62,7 @@ class PHPUnit extends DataPipe {
 		}
 		$xproc = new \XSLTProcessor();
 
-		$junitLog = file_get_contents('tmp/junit.xml');
+		$junitLog = file_get_contents($this->junitLog);
 		if (!strlen($junitLog)) {
 			return [];
 		}
